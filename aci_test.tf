@@ -18,18 +18,18 @@ provider "aci" {
 }
 
 resource "aci_tenant" "terraform_ten" {
-  name = "terraform_ten"
+  name = "jaheo-terraform-test"
 }
 
 resource "aci_vrf" "vrf1" {
   tenant_dn = "${aci_tenant.terraform_ten.id}"
-  name      = "vrf1"
+  name      = "jaheo-terraform-test-vrf1"
 }
 
 resource "aci_bridge_domain" "bd1" {
   tenant_dn          = "${aci_tenant.terraform_ten.id}"
   #relation_fv_rs_ctx = "${aci_vrf.vrf1.name}"
-  name               = "bridge-domain-jaheo"
+  name               = "jaheo-terraform-test-bd1"
 }
 
 resource "aci_subnet" "bd1_subnet" {
@@ -39,12 +39,12 @@ resource "aci_subnet" "bd1_subnet" {
 
 resource "aci_application_profile" "app1" {
   tenant_dn = "${aci_tenant.terraform_ten.id}"
-  name      = "app1"
+  name      = "jaheo-terraform-test-app1"
 }
 
 resource "aci_application_epg" "epg1" {
   application_profile_dn = "${aci_application_profile.app1.id}"
-  name                   = "epg1"
+  name                   = "jaheo-terraform-test-epg1"
   #relation_fv_rs_bd      = "${aci_bridge_domain.bd1.name}"
 }
 
