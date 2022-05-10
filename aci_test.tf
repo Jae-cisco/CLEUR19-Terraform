@@ -1,9 +1,12 @@
 provider "aci" {
-  username    = "api_user"
-  private_key = "${var.aci_private_key}"
-  cert_name   = "${var.aci_cert_name}"
-  url         = "${var.apic_url}"
-  insecure    = true
+  # cisco-aci user name
+  username = var.username
+  # cisco-aci password
+  password = var.password
+  # cisco-aci url
+  url      = var.url
+  insecure = true
+  #proxy_url = "https://proxy_server:proxy_port"
 }
 
 resource "aci_tenant" "terraform_ten" {
