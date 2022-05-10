@@ -34,7 +34,7 @@ resource "aci_bridge_domain" "bd1" {
 
 resource "aci_subnet" "bd1_subnet" {
   bridge_domain_dn = "${aci_bridge_domain.bd1.id}"
-  name             = "Subnet"
+  #name             = "Subnet"
   ip               = "192.168.1.1/24"
 }
 
@@ -48,6 +48,5 @@ resource "aci_application_epg" "epg1" {
   name                   = "epg1"
   relation_fv_rs_bd      = "${aci_bridge_domain.bd1.name}"
   relation_fv_rs_dom_att = ["${var.vmm_domain_dn}"]
-  relation_fv_rs_cons    = ["${aci_contract.contract_epg1_epg2.name}"]
 }
 
