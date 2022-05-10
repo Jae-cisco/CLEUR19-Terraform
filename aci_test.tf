@@ -33,7 +33,7 @@ resource "aci_bridge_domain" "bd1" {
 }
 
 resource "aci_subnet" "bd1_subnet" {
-  bridge_domain_dn = "${aci_bridge_domain.bd1.id}"
+  parent_dn = "${aci_bridge_domain.bd1.id}"
   #name             = "Subnet"
   ip               = "192.168.1.1/24"
 }
