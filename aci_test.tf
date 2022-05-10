@@ -29,7 +29,7 @@ resource "aci_vrf" "vrf1" {
 resource "aci_bridge_domain" "bd1" {
   tenant_dn          = "${aci_tenant.terraform_ten.id}"
   relation_fv_rs_ctx = "${aci_vrf.vrf1.name}"
-  name               = "bd1"
+  name               = "bridge-domain-jaheo"
 }
 
 resource "aci_subnet" "bd1_subnet" {
