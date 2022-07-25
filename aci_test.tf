@@ -8,9 +8,6 @@ terraform {
 }
 
 provider "aci" {
-  # Configuration options
-}
-provider "aci" {
   # cisco-aci user name
   username = var.username
   # cisco-aci password
