@@ -14,6 +14,6 @@ provider "aci" {
   password = var.password
   # cisco-aci url
   url      = var.url
-  insecure = false
+  insecure = true
   #proxy_url = "https://proxy_server:proxy_port"
 }
