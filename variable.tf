@@ -5,9 +5,9 @@ variable "username" {
 }
 variable "password" {
   type        = string
-  description = "1234qwer"
+  default = "1234qwer"
 }
 variable "url" {
   type        = string
-  description = "https://10.70.136.174"
+  default = "https://10.70.136.174"
 }
